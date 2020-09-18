@@ -24,7 +24,7 @@
 // Place any jQuery/helper plugins in here.
 var zt = new ZingTouch.Region(document.body);
 
-const tap = new ZingTouch.Tap();
+const tap = new ZingTouch.Pan();
 tap.start = function (inputs) {
   var target = inputs[0].current.originalEvent.target.parentElement;
   target.classList.add('hover');
@@ -44,32 +44,21 @@ tap.end = function (inputs) {
 
 var pickupButton = document.getElementById('pickupButton');
 zt.bind(pickupButton, tap, function(e){
-  console.log('Class: e, Function: , Line 29 e(): '
-  , e);
-  e.end();
-  //Actions here
-  navigator.vibrate([500]);
   console.log('pickup');
 }, false);
 
 var catButton = document.getElementById('catButton');
 zt.bind(catButton, tap, function(e){
-  //Actions here
-  navigator.vibrate([500]);
   console.log('cat');
 }, false);
 
 var dogButton = document.getElementById('dogButton');
 zt.bind(dogButton, tap, function(e){
-  //Actions here
-  navigator.vibrate([500]);
   console.log('dog');
 }, false);
 
 var carrotButton = document.getElementById('carrotButton');
 zt.bind(carrotButton, tap, function(e){
-  //Actions here
-  navigator.vibrate([500]);
   console.log('carrot');
 }, false);
 
